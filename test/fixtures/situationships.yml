@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  phase: 1
+  power_dynamic: 1
+  time_of_day: 1
+  unnamed_feeling: 1
+  attachment_clash: 1
+  emotional_intensity: 1
+  hope_level: 1
+  jealousy_factor: 1
+  physicality: 1
+  ambiguity_level: 1
+  talk_happened: false
+  others_involved: false
+  last_seen_days_ago: 1
+  specific_detail: MyText
+
+two:
+  user: two
+  phase: 1
+  power_dynamic: 1
+  time_of_day: 1
+  unnamed_feeling: 1
+  attachment_clash: 1
+  emotional_intensity: 1
+  hope_level: 1
+  jealousy_factor: 1
+  physicality: 1
+  ambiguity_level: 1
+  talk_happened: false
+  others_involved: false
+  last_seen_days_ago: 1
+  specific_detail: MyText

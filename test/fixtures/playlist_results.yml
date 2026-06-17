@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  situationship: one
+  input_hash: MyString
+  tracks: MyText
+
+two:
+  user: two
+  situationship: two
+  input_hash: MyString
+  tracks: MyText
