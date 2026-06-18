@@ -1,2 +1,77 @@
-<h1>Situationships#new</h1>
-<p>Find me in app/views/situationships/new.html.erb</p>
+<div>
+  <h1>what's your situationship?</h1>
+
+<%= form_with model: @situationship, url: situationships_path do |f| %>
+    <div>
+      <%= f.label :phase, "where are you at?" %>
+      <%= f.select :phase, Situationship.phases.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
+    <div>
+      <%= f.label :power_dynamic, "who's waiting?" %>
+      <%= f.select :power_dynamic, Situationship.power_dynamics.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
+    <div>
+      <%= f.label :time_of_day, "when does it live?" %>
+      <%= f.select :time_of_day, Situationship.time_of_days.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
+    <div>
+      <%= f.label :unnamed_feeling, "how are you?" %>
+      <%= f.select :unnamed_feeling, Situationship.unnamed_feelings.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
+    <div>
+      <%= f.label :attachment_clash, "attachment styles" %>
+      <%= f.select :attachment_clash, Situationship.attachment_clashes.keys.map { |k| [k.humanize, k] } %>
+    </div>
+
+    <div>
+      <%= f.label :emotional_intensity, "emotional intensity (1-10)" %>
+      <%= f.number_field :emotional_intensity, min: 1, max: 10 %>
+    </div>
+
+    <div>
+      <%= f.label :hope_level, "hope level (1-10)" %>
+      <%= f.number_field :hope_level, min: 1, max: 10 %>
+    </div>
+
+    <div>
+      <%= f.label :jealousy_factor, "jealousy factor (1-10)" %>
+      <%= f.number_field :jealousy_factor, min: 1, max: 10 %>
+    </div>
+
+    <div>
+      <%= f.label :physicality, "how physical is it (1-10)" %>
+      <%= f.number_field :physicality, min: 1, max: 10 %>
+    </div>
+
+    <div>
+      <%= f.label :ambiguity_level, "ambiguity level (1-10)" %>
+      <%= f.number_field :ambiguity_level, min: 1, max: 10 %>
+    </div>
+
+    <div>
+      <%= f.label :talk_happened, "has the talk happened?" %>
+      <%= f.check_box :talk_happened %>
+    </div>
+
+    <div>
+      <%= f.label :others_involved, "are other people involved?" %>
+      <%= f.check_box :others_involved %>
+    </div>
+
+    <div>
+      <%= f.label :last_seen_days_ago, "days since you last saw them" %>
+      <%= f.number_field :last_seen_days_ago, min: 0 %>
+    </div>
+
+    <div>
+      <%= f.label :specific_detail, "the detail that makes it yours" %>
+      <%= f.text_area :specific_detail %>
+    </div>
+
+    <%= f.submit "generate playlist" %>
+  <% end %>
+</div>
