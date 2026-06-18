@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_17_074957) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_18_095621) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -30,6 +30,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_17_074957) do
     t.integer "attachment_clash"
     t.datetime "created_at", null: false
     t.integer "emotional_intensity"
+    t.string "genres", default: [], array: true
     t.integer "hope_level"
     t.integer "jealousy_factor"
     t.integer "last_seen_days_ago"
