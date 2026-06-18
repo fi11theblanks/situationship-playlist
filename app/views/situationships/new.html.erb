@@ -4,27 +4,27 @@
 <%= form_with model: @situationship, url: situationships_path do |f| %>
     <div>
       <%= f.label :phase, "where are you at?" %>
-      <%= f.select :phase, Situationship.phases.keys.map { |k| [k.humanize, k] } %>
+      <%= f.select :phase, Situationship.phases.keys.map { |k| [k.humanize, k] }, prompt: "select..." %>
     </div>
 
     <div>
       <%= f.label :power_dynamic, "who's waiting?" %>
-      <%= f.select :power_dynamic, Situationship.power_dynamics.keys.map { |k| [k.humanize, k] } %>
+      <%= f.select :power_dynamic, Situationship.power_dynamics.keys.map { |k| [k.humanize, k] }, prompt: "select..." %>
     </div>
 
     <div>
       <%= f.label :time_of_day, "when does it live?" %>
-      <%= f.select :time_of_day, Situationship.time_of_days.keys.map { |k| [k.humanize, k] } %>
+      <%= f.select :time_of_day, Situationship.time_of_days.keys.map { |k| [k.humanize, k] }, prompt: "select..." %>
     </div>
 
     <div>
       <%= f.label :unnamed_feeling, "how are you?" %>
-      <%= f.select :unnamed_feeling, Situationship.unnamed_feelings.keys.map { |k| [k.humanize, k] } %>
+      <%= f.select :unnamed_feeling, Situationship.unnamed_feelings.keys.map { |k| [k.humanize, k] }, prompt: "select..." %>
     </div>
 
     <div>
       <%= f.label :attachment_clash, "attachment styles" %>
-      <%= f.select :attachment_clash, Situationship.attachment_clashes.keys.map { |k| [k.humanize, k] } %>
+      <%= f.select :attachment_clash, Situationship.attachment_clashes.keys.map { |k| [k.humanize, k] }, prompt: "select..." %>
     </div>
 
     <div>
@@ -70,6 +70,23 @@
     <div>
       <%= f.label :specific_detail, "the detail that makes it yours" %>
       <%= f.text_area :specific_detail %>
+    </div>
+
+    <div>
+      <%= f.label :genres, "genres you like" %>
+      <%= f.collection_check_boxes :genres, [
+        ['indie', 'indie'],
+        ['r-n-b', 'r-n-b'],
+        ['electronic', 'electronic'],
+        ['pop', 'pop'],
+        ['hip-hop', 'hip-hop'],
+        ['jazz', 'jazz'],
+        ['ambient', 'ambient'],
+        ['latin', 'latin']
+      ], :first, :last do |b| %>
+        <%= b.check_box %>
+        <%= b.label %>
+      <% end %>
     </div>
 
     <%= f.submit "generate playlist" %>

@@ -1,2 +1,19 @@
-<h1>Situationships#show</h1>
-<p>Find me in app/views/situationships/show.html.erb</p>
+<div>
+  <h1>your situationship playlist</h1>
+
+  <% if @playlist %>
+    <% tracks = JSON.parse(@playlist.tracks) %>
+    <% tracks.each_with_index do |track, i| %>
+      <div>
+        <span><%= i + 1 %>.</span>
+        <strong><%= track['track'] %></strong>
+        by <%= track['artist'] %>
+        <p><%= track['reason'] %></p>
+      </div>
+    <% end %>
+
+    <%= button_to "save to spotify", save_to_spotify_situationship_path(@situationship), method: :post %>
+  <% else %>
+    <p>something went wrong generating your playlist.</p>
+  <% end %>
+</div>
